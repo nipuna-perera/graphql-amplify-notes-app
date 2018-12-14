@@ -1,0 +1,9 @@
+{
+    "AppSyncApiName": "notesgraphql",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authcognito7d09ebc8",
+            "Outputs.UserPoolId"
+        ]
+    }
+}
