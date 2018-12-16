@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Amplify, {API,graphqlOperation} from 'aws-amplify';
 import { withAuthenticator} from 'aws-amplify-react'; 
 import aws_exports from './aws-exports'; // specify the location of aws-exports.js file on your project
+
 Amplify.configure(aws_exports);
 
 const createNote = `mutation createNote($note: String!){

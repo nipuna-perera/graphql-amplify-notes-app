@@ -78,26 +78,26 @@
 				}
 			}
 		},
-		"authcognito7d09ebc8": {
+		"authcognitoa11aadaf": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/mangonotes-20181213180157-deployment/amplify-cfn-templates/auth/cognito7d09ebc8-cloudformation-template.yml",
+				"TemplateURL": "https://s3.amazonaws.com/notesapp-20181216122408-deployment/amplify-cfn-templates/auth/cognitoa11aadaf-cloudformation-template.yml",
 				"Parameters": {
-					"identityPoolName": "cognito7d09ebc8_identitypool_7d09ebc8",
+					"identityPoolName": "cognitoa11aadaf_identitypool_a11aadaf",
 					"allowUnauthenticatedIdentities": false,
 					"thirdPartyAuth": false,
-					"lambdaLogPolicy": "cognito7d09ebc8_lambda_log_policy",
-					"openIdLambdaRoleName": "cognito7d09ebc8_openid_lambda_role",
-					"openIdRolePolicy": "cognito7d09ebc8_openid_pass_role_policy",
-					"openIdLambdaIAMPolicy": "cognito7d09ebc8_openid_lambda_iam_policy",
-					"openIdLogPolicy": "cognito7d09ebc8_openid_lambda_log_policy",
-					"userPoolName": "cognito7d09ebc8_userpool_7d09ebc8",
+					"lambdaLogPolicy": "cognitoa11aadaf_lambda_log_policy",
+					"openIdLambdaRoleName": "cognitoa11aadaf_openid_lambda_role",
+					"openIdRolePolicy": "cognitoa11aadaf_openid_pass_role_policy",
+					"openIdLambdaIAMPolicy": "cognitoa11aadaf_openid_lambda_iam_policy",
+					"openIdLogPolicy": "cognitoa11aadaf_openid_lambda_log_policy",
+					"userPoolName": "cognitoa11aadaf_userpool_a11aadaf",
 					"autoVerifiedAttributes": "email",
 					"mfaConfiguration": "OFF",
 					"mfaTypes": "SMS Text Message",
-					"roleName": "cognito7d09ebc8_sns-role",
-					"roleExternalId": "cognito7d09ebc8_role_external_id",
-					"policyName": "cognito7d09ebc8-sns-policy",
+					"roleName": "cognitoa11aadaf_sns-role",
+					"roleExternalId": "cognitoa11aadaf_role_external_id",
+					"policyName": "cognitoa11aadaf-sns-policy",
 					"smsAuthenticationMessage": "Your authentication code is {####}",
 					"smsVerificationMessage": "Your verification code is {####}",
 					"emailVerificationSubject": "Your verification code",
@@ -106,20 +106,20 @@
 					"passwordPolicyMinLength": 8,
 					"passwordPolicyCharacters": "Requires Lowercase,Requires Uppercase,Requires Numbers,Requires Symbols",
 					"requiredAttributes": "email",
-					"userpoolClientName": "cognito7d09ebc8_app_client",
+					"userpoolClientName": "cognitoa11aadaf_app_client",
 					"userpoolClientGenerateSecret": true,
 					"userpoolClientRefreshTokenValidity": 30,
 					"userpoolClientReadAttributes": "email",
-					"mfaLambdaRole": "cognito7d09ebc8_totp_lambda_role",
-					"mfaLambdaLogPolicy": "cognito7d09ebc8_totp_lambda_log_policy",
-					"mfaPassRolePolicy": "cognito7d09ebc8_totp_pass_role_policy",
-					"mfaLambdaIAMPolicy": "cognito7d09ebc8_totp_lambda_iam_policy",
-					"userpoolClientLambdaRole": "cognito7d09ebc8_userpoolclient_lambda_role",
-					"userpoolClientLogPolicy": "cognito7d09ebc8_userpoolclient_lambda_log_policy",
-					"userpoolClientLambdaPolicy": "cognito7d09ebc8_userpoolclient_lambda_iam_policy",
+					"mfaLambdaRole": "cognitoa11aadaf_totp_lambda_role",
+					"mfaLambdaLogPolicy": "cognitoa11aadaf_totp_lambda_log_policy",
+					"mfaPassRolePolicy": "cognitoa11aadaf_totp_pass_role_policy",
+					"mfaLambdaIAMPolicy": "cognitoa11aadaf_totp_lambda_iam_policy",
+					"userpoolClientLambdaRole": "cognitoa11aadaf_userpoolclient_lambda_role",
+					"userpoolClientLogPolicy": "cognitoa11aadaf_userpoolclient_lambda_log_policy",
+					"userpoolClientLambdaPolicy": "cognitoa11aadaf_userpoolclient_lambda_iam_policy",
 					"userpoolClientSetAttributes": false,
 					"useDefault": "default",
-					"resourceName": "cognito7d09ebc8",
+					"resourceName": "cognitoa11aadaf",
 					"authSelections": "identityPoolAndUserPool",
 					"authRoleName": {
 						"Ref": "AuthRoleName"
@@ -143,22 +143,22 @@
 				}
 			}
 		},
-		"apinotesgraphql": {
+		"apinotesapp": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/mangonotes-20181213180157-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"TemplateURL": "https://s3.amazonaws.com/notesapp-20181216122408-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"Parameters": {
-					"AppSyncApiName": "notesgraphql",
+					"AppSyncApiName": "notesapp",
 					"AuthCognitoUserPoolId": {
 						"Fn::GetAtt": [
-							"authcognito7d09ebc8",
+							"authcognitoa11aadaf",
 							"Outputs.UserPoolId"
 						]
 					},
-					"schemaGraphql": "s3://mangonotes-20181213180157-deployment/amplify-appsync-files/schema.graphql.1544944929806",
-					"ResolverBucket": "mangonotes-20181213180157-deployment",
+					"schemaGraphql": "s3://notesapp-20181216122408-deployment/amplify-appsync-files/schema.graphql.1544984829964",
+					"ResolverBucket": "notesapp-20181216122408-deployment",
 					"ResolverRootKey": "amplify-appsync-files",
-					"DeploymentTimestamp": "1544944929806",
+					"DeploymentTimestamp": "1544984829964",
 					"env": "master"
 				}
 			}

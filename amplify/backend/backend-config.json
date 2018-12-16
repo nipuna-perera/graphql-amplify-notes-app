@@ -1,12 +1,12 @@
 {
 	"auth": {
-		"cognito7d09ebc8": {
+		"cognitoa11aadaf": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation"
 		}
 	},
 	"api": {
-		"notesgraphql": {
+		"notesapp": {
 			"service": "AppSync",
 			"providerPlugin": "awscloudformation",
 			"output": {
