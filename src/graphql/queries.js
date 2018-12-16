@@ -22,3 +22,23 @@ export const listNotes = `query ListNotes(
   }
 }
 `;
+export const searchNotes = `query SearchNotes(
+  $filter: SearchableNoteFilterInput
+  $sort: SearchableNoteSortInput
+  $limit: Int
+  $nextToken: Int
+) {
+  searchNotes(
+    filter: $filter
+    sort: $sort
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      note
+    }
+    nextToken
+  }
+}
+`;

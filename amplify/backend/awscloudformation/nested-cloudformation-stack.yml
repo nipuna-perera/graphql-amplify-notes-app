@@ -81,7 +81,7 @@
 		"authcognitoa11aadaf": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/notesapp-20181216122408-deployment/amplify-cfn-templates/auth/cognitoa11aadaf-cloudformation-template.yml",
+				"TemplateURL": "https://s3.amazonaws.com/notesapp-20181216140244-deployment/amplify-cfn-templates/auth/cognitoa11aadaf-cloudformation-template.yml",
 				"Parameters": {
 					"identityPoolName": "cognitoa11aadaf_identitypool_a11aadaf",
 					"allowUnauthenticatedIdentities": false,
@@ -139,14 +139,14 @@
 							"Arn"
 						]
 					},
-					"env": "master"
+					"env": "dev"
 				}
 			}
 		},
 		"apinotesapp": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/notesapp-20181216122408-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"TemplateURL": "https://s3.amazonaws.com/notesapp-20181216140244-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"Parameters": {
 					"AppSyncApiName": "notesapp",
 					"AuthCognitoUserPoolId": {
@@ -155,11 +155,13 @@
 							"Outputs.UserPoolId"
 						]
 					},
-					"schemaGraphql": "s3://notesapp-20181216122408-deployment/amplify-appsync-files/schema.graphql.1544984829964",
-					"ResolverBucket": "notesapp-20181216122408-deployment",
+					"ElasticSearchStreamingLambdaCodeS3Key": "amplify-appsync-files/python_streaming_function.zip",
+					"ElasticSearchStreamingLambdaCodeS3Bucket": "notesapp-20181216140244-deployment",
+					"schemaGraphql": "s3://notesapp-20181216140244-deployment/amplify-appsync-files/schema.graphql.1544990815288",
+					"ResolverBucket": "notesapp-20181216140244-deployment",
 					"ResolverRootKey": "amplify-appsync-files",
-					"DeploymentTimestamp": "1544984829964",
-					"env": "master"
+					"DeploymentTimestamp": "1544990815288",
+					"env": "dev"
 				}
 			}
 		}
